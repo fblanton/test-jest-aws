@@ -1,5 +1,5 @@
 // setup.js
-const puppeteer = require("chrome-aws-lambda").puppeteer;
+const puppeteer = require("chrome-aws-lambda").puppeteer();
 const mkdirp = require("mkdirp");
 const path = require("path");
 const fs = require("fs");
