@@ -1,7 +1,7 @@
 const NodeEnvironment = require("jest-environment-node");
 const fs = require("fs");
 const path = require("path");
-const puppeteer = require("chrome-aws-lambda").puppeteer;
+const chromium = require("chrome-aws-lambda");
 const os = require("os");
 
 const DIR = path.join(os.tmpdir(), "jest_puppeteer_global_setup");
@@ -20,7 +20,7 @@ class PuppeteerEnvironment extends NodeEnvironment {
     }
 
     // connect to puppeteer
-    this.global.__BROWSER__ = await puppeteer.connect({
+    this.global.__BROWSER__ = await chromium.puppeteer.connect({
       browserWSEndpoint: wsEndpoint
     });
   }
